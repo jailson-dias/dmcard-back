@@ -1,0 +1,4 @@
+{
+  "connectionString": "mongodb://mongo:27017/dmcard",
+  "secret": "IoyhZXN4UqumJW1DJ2sB8hPXP3E3TKYe3vfAhhtG23SbeYEVOntYtLqASJiJ"
+}
