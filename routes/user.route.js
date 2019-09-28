@@ -5,10 +5,8 @@ const userController = require("../controllers/user.controller");
 // routes
 router.post("/authenticate", authenticate);
 router.post("/register", register);
-// router.get("/", getAll);
 router.get("/current", getCurrent);
 router.get("/:id", getById);
-// router.put("/:id", update);
 router.delete("/:id", _delete);
 
 module.exports = router;
@@ -31,13 +29,6 @@ function register(req, res, next) {
     .catch(err => next(err));
 }
 
-// function getAll(req, res, next) {
-//   userController
-//     .getAll()
-//     .then(users => res.json(users))
-//     .catch(err => next(err));
-// }
-
 function getCurrent(req, res, next) {
   userController
     .getById(req.user.sub)
@@ -51,13 +42,6 @@ function getById(req, res, next) {
     .then(user => (user ? res.json(user) : res.sendStatus(404)))
     .catch(err => next(err));
 }
-
-// function update(req, res, next) {
-//   userController
-//     .update(req.params.id, req.body)
-//     .then(() => res.json({}))
-//     .catch(err => next(err));
-// }
 
 function _delete(req, res, next) {
   userController
