@@ -11,7 +11,6 @@ const schema = new Schema({
   name: { type: String, required: true },
   email: {
     type: String,
-    unique: true,
     required: true,
     validate: {
       validator: emailValidator,
@@ -29,12 +28,23 @@ const schema = new Schema({
   },
   phone: {
     type: String,
-    unique: true,
     required: true,
     validate: {
       validator: phoneValidator,
       message: props => `${props.value} is not a valid phone number!`
     }
+  },
+  income: {
+    type: Number,
+    required: true
+  },
+  credit: {
+    type: Number,
+    required: true
+  },
+  score: {
+    type: Number,
+    required: true
   },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
